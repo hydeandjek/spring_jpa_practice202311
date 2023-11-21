@@ -5,7 +5,8 @@ import lombok.*;
 import javax.persistence.*;
 
 @Setter @Getter
-@ToString
+//JPA 연관 관계 매핑에서 연관 관계 데이터는 toString에서 제외해야합니다.
+@ToString(exclude = {"department"})
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,7 +22,9 @@ public class Employee {
     @Column(name = "emp_name", nullable = false)
     private String name;
 
-    @ManyToOne
+    // EAGER: 항상 무조건 조인을 수행
+    // LAZY : 필요한 경우에만 조인을 수행
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "dept_id")
     private Department department;
 
