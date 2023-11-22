@@ -21,7 +21,7 @@ public class HashTag {
     @Column(name = "tag_no")
     private Long id;
 
-    private String tagAName; // 해시태그 이름
+    private String tagName; // 해시태그 이름
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "post_no")

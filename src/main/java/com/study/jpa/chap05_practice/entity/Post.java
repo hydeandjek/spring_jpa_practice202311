@@ -32,6 +32,9 @@ public class Post {
 
     private String content;
 
+    @Column(nullable = false)
+    private String title;
+
     @CreationTimestamp
     @Column(updatable = false)
     private LocalDateTime createDate;
