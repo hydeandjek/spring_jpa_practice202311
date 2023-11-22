@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class PostDetailResopnseDTO {
+public class PostDetailResponseDTO {
 
     private String writer;
     private String title;
@@ -25,7 +25,7 @@ public class PostDetailResopnseDTO {
     private LocalDateTime regDate;
 
     //엔터티를 DTO로 변환하는 생성자
-    public PostDetailResopnseDTO(Post post){
+    public PostDetailResponseDTO(Post post){
         this.writer = post.getWriter();
         this.title = post.getTitle();
         this.content = post.getContent();
